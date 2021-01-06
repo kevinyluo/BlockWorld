@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 4</title>
+  </head>
+  <style>
+  label {
+    width: 200px;
+    display: inline-block;
+  }
+  </style>
+  <body onload="main()">
+     <div>
+        <canvas id="webgl" width="1000" height="600">
+           Please use a browser that supports "canvas"
+        </canvas>
+     </div>
+     <div>
+        <b> Click and Drag the mouse to move the camera. WASD to move! </b>
+     </div>
+
+     <div>
+       <br> <input type = "button" value = "Normal Visualization" id = "normalVis">
+       <input type = "button" value = "Lighting on/off" id = "lightMode">
+       <input type = "button" value = "Sun Visualization on/off" id="sun">
+     </div>
+     <div>
+        <br> <label id="worldSizeLabel">World Size: 18 </label> <input id="worldSizeSlider" type="range" min="1" max="32" value="18">
+        <br> <label id="lightPositionLabel">light Z position: -9 </label> <input id="lightSlider" type="range" min="-32" max="32" value="-9">
+        <br> <label id="kaLabel"> Ambient Relection (ka): 0.5 </label> <input id="kaSlider" type="range" min="0" max="1" value="0.5" step="0.01">
+        <label style="text-align: right;">Ambient Color: </label> <input id="ambientColor" type="color" value="#333333">
+        <br> <label id="kdLabel"> Diffuse reflection (kd): 1 </label> <input id="kdSlider" type="range" min="0" max="1" value="1" step="0.01">
+        <label style="text-align: right;">Diffuse Color: </label> <input id="diffuseColor" type="color" value="#70706b">
+        <br> <label id="ksLabel"> Specular reflection (ks): 1 </label> <input id="ksSlider" type="range" min="0" max="1" value="1" step="0.01">
+        <label style="text-align: right;">Specular Color: </label> <input id="specularColor" type="color" value="#FFFFFF">
+        <br> <label id="shininessLabel"> Shininess: 8 </label> <input id="shininessSlider" type="range" min="1" max="128" value="8" step="1">
+     </div>
+
+   <script src="lib/webgl-utils.js"></script>
+   <script src="lib/webgl-debug.js"></script>
+   <script src="lib/cuon-utils.js"></script>
+   <script src="lib/cuon-matrix.js"></script>
+	<script src="src/World.js"></script>
+  </body>
+</html>
